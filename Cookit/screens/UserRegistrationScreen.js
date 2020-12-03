@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   btn: {
-    backgroundColor: '#D4AF37',
+    backgroundColor: '#FF7F00',
     width: '70%',
     marginTop: 16,
     marginBottom: 16,

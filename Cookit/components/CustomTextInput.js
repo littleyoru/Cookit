@@ -9,7 +9,7 @@ const CustomTextInput = (props) => {
       <View style={hasFocus ? [styles.textContainer, styles.focusedTextContainer] : styles.textContainer}>
         <TextInput
           {...props}
-          selectionColor='#D4AF37'
+          selectionColor='#FF7F00'
           underlineColorAndroid='transparent'
           style={styles.text}
           onFocus={() => onChangeFocus(true)}
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-around'
+    //justifyContent: 'space-around'
   },
   textContainer: {
     flex: 1,
@@ -41,12 +41,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF'
   },
   text: {
-    minHeight: 40,
+    height: 50,
     padding: 6
   },
   focusedTextContainer: {
     borderWidth: 1,
-    borderColor: '#D4AF37',
+    borderColor: '#FF7F00',
   }
 })
 

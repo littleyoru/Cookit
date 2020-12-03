@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import CustomTextInput from '../components/CustomTextInput';
 
 class LoginScreen extends Component {
@@ -32,44 +33,50 @@ class LoginScreen extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.title}>Cookit Login</Text>
-        <CustomTextInput
-          placeholder='Email'
-          icon='info'
-          onChangeText={(text) => this.onChangeText('email', text)}
-          value={this.state.email}
-        />
-        <CustomTextInput
-          placeholder='Password'
-          icon='info'
-          onChangeText={(text) => this.onChangeText('password', text)}
-          value={this.state.password}
-        />
-        <TouchableHighlight style={styles.btn} onPress={this.login}>
-          <Text style={styles.btnText}>OK</Text>
-        </TouchableHighlight>
-        <Text>or</Text>
-        <TouchableHighlight style={styles.btn} onPress={this.gotToRegister}>
-          <Text style={styles.btnText}>Register</Text>
-        </TouchableHighlight>
-      </View>
+      <SafeAreaView style={styles.viewContainer}>
+        <View style={styles.container}>
+          <Text style={styles.title}>Please Login to continue</Text>
+          <CustomTextInput
+            placeholder='Email'
+            onChangeText={(text) => this.onChangeText('email', text)}
+            value={this.state.email}
+          />
+          <CustomTextInput
+            placeholder='Password'
+            onChangeText={(text) => this.onChangeText('password', text)}
+            value={this.state.password}
+          />
+          <TouchableHighlight style={styles.btn} onPress={this.login}>
+            <Text style={styles.btnText}>Login</Text>
+          </TouchableHighlight>
+          <Text>or</Text>
+          <TouchableHighlight style={styles.btn} onPress={this.gotToRegister}>
+            <Text style={styles.btnText}>Register</Text>
+          </TouchableHighlight>
+        </View>
+      </SafeAreaView>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
+  viewContainer: {
     flex: 1,
+    justifyContent: 'center'
+  },
+  container: {
+    flex: 0.7,
     alignItems: 'center',
     justifyContent: 'center',
+    paddingHorizontal: 24,
+    paddingVertical: 24
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
   },
   btn: {
-    backgroundColor: '#D4AF37',
+    backgroundColor: '#FF7F00',
     width: '70%',
     marginTop: 16,
     marginBottom: 16,

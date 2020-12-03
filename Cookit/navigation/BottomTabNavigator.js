@@ -8,6 +8,7 @@ import RecipeListScreen from '../screens/RecipeListScreen'
 import RecipeViewScreen from '../screens/RecipeViewScreen'
 import AddRecipeScreen from '../screens/AddRecipeScreen'
 import UserProfileScreen from '../screens/UserProfileScreen'
+import MyFridgeScreen from '../screens/MyFridgeScreen'
 
 const BottomTab = createBottomTabNavigator();
 
@@ -16,7 +17,7 @@ export default function BottomTabNavigator() {
     <BottomTab.Navigator initialRouteName='MyFridge'>
       <BottomTab.Screen
         name='MyFridge'
-        component={}
+        component={MyFridgeScreen}
         options={() => <TabBarIcon icon='fridge-outline' iconType='material-community' />}
       />
       <BottomTab.Screen
@@ -26,7 +27,7 @@ export default function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name='AddRecipe'
-        component={}
+        component={AddRecipeScreen}
         options={() => <TabBarIcon icon='page-add' iconType='foundation' />}
       />
       <BottomTab.Screen
@@ -44,7 +45,7 @@ export default function BottomTabNavigator() {
 }
 
 function TabBarIcon() {
-  return <Icon name={props.icon} type='props.iconType' color='#D4AF37' style={styles.iconStyle} />;
+  return <Icon name={props.icon} type='props.iconType' fill='#FF7F00' style={styles.iconStyle} size={30} />;
 }
 
 const RecipesStack = createStackNavigator();
