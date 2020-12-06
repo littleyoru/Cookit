@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import CustomTextInput from '../components/CustomTextInput';
 
 class UserRegistrationScreen extends Component {
@@ -7,11 +8,11 @@ class UserRegistrationScreen extends Component {
     super(props)
 
     this.state = {
-      photo: null,
-      username: '',
-      email: '',
-      password: '',
-      repeatPassword: ''
+      // photo: null,
+      username: 'Elena',
+      email: 'elena@mail.com',
+      password: 'passtest',
+      repeatPassword: 'passtest'
     }
 
     this.onChangeText = this.onChangeText.bind(this)
@@ -25,7 +26,7 @@ class UserRegistrationScreen extends Component {
   }
 
   createUser () {
-
+    console.log('create user function')
   }
 
   render() {
@@ -35,27 +36,25 @@ class UserRegistrationScreen extends Component {
           <Text style={styles.title}>Cookit Registration</Text>
           <CustomTextInput
             placeholder='Username'
-            icon='info'
             onChangeText={(text) => this.onChangeText('username', text)}
             value={this.state.username}
           />
           <CustomTextInput
               placeholder='Email'
-              icon='info'
               onChangeText={(text) => this.onChangeText('email', text)}
               value={this.state.email}
           />
           <CustomTextInput
             placeholder='Password'
-            icon='info'
             onChangeText={(text) => this.onChangeText('password', text)}
             value={this.state.password}
+            isPass={true}
           />
           <CustomTextInput
               placeholder='Repeat password'
-              icon='info'
               onChangeText={(text) => this.onChangeText('repeatPassword', text)}
               value={this.state.repeatPassword}
+              isPass={true}
           />
           <TouchableHighlight style={styles.btn} onPress={this.createUser}>
             <Text style={styles.btnText}>Create user</Text>
@@ -67,6 +66,10 @@ class UserRegistrationScreen extends Component {
 }
 
 const styles = StyleSheet.create({
+  viewContainer: {
+    flex: 1,
+    justifyContent: 'center'
+  },
   container: {
     flex: 1,
     alignItems: 'center',

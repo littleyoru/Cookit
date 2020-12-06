@@ -14,6 +14,7 @@ const CustomTextInput = (props) => {
           style={styles.text}
           onFocus={() => onChangeFocus(true)}
           onBlur={() => onChangeFocus(false)}
+          secureTextEntry={props.isPass || false}
           // value={value}
           // onChangeText={text => onChangeText(text)} 
           />

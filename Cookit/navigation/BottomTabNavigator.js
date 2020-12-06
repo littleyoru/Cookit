@@ -16,7 +16,7 @@ export default function BottomTabNavigator() {
   return (
     <BottomTab.Navigator
       initialRouteName='MyFridge'
-      tabBarOptions={{activeTintColor: '#FF7F00'}}>
+      tabBarOptions={{activeTintColor: '#FF7F00', inactiveTintColor: 'gray'}}>
       <BottomTab.Screen
         name='MyFridge'
         component={MyFridgeScreen}

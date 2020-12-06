@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, TouchableHighlight, Image } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 class RecipeViewScreen extends Component {
   constructor (props) {
@@ -20,18 +21,20 @@ class RecipeViewScreen extends Component {
 
   render () {
     return (
-      <View style={styles.container}>
-        <Text style={styles.header}>Portions</Text>
-        <Text>4</Text>
-        <Text style={styles.header}>Time</Text>
-        <Text>45min</Text>
-        <Text style={styles.header}>Temperature</Text>
-        <Text>200</Text>
-        <Text style={styles.header}>Ingredients</Text>
-        <Text></Text>
-        <Text style={styles.header}>Preparation</Text>
-        <Text></Text>
-      </View>
+      <SafeAreaView style={styles.viewContainer}>
+        <View style={styles.container}>
+          <Text style={styles.header}>Portions</Text>
+          <Text>4</Text>
+          <Text style={styles.header}>Time</Text>
+          <Text>45min</Text>
+          <Text style={styles.header}>Temperature</Text>
+          <Text>200</Text>
+          <Text style={styles.header}>Ingredients</Text>
+          <Text></Text>
+          <Text style={styles.header}>Preparation</Text>
+          <Text></Text>
+        </View>
+      </SafeAreaView>
     )
   }
 }

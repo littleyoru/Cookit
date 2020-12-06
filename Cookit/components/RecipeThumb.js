@@ -1,38 +1,28 @@
 import React, { Component } from 'react'
-import { StyleSheet, TextInput, View, Image, Text } from 'react-native'
+import { StyleSheet, TextInput, View, Image, Text, TouchableHighlight } from 'react-native'
 
 const RecipeThumb = (props) => {
-  console.log('props ', props)
+  console.log('props ', props, props.name)
 	return (
-		<View style={styles.container}>
-			<Image source={props.image} style={{height: 50, width: 50, margin: 10}} />
+		<TouchableHighlight style={styles.container} onPress={props.onPress}>
+			<Image source={props.image} style={styles.image} />
 			<Text>{props.name}</Text>
-		</View>
+		</TouchableHighlight>
 	)
 }
 
-
-// class RecipeThumb extends Component {
-//   constructor(props) {
-//     super(props)
-
-//   }
-
-//   render () {
-//     console.log('image props ', this.props)
-//     return (
-//       <View style={styles.container}>
-//         <Image source={this.props.image} style={{height: 50, width: 50, margin: 10}} />
-//         <Text>{this.props.name}</Text>
-//       </View>
-//     )
-//   }
-// }
-
 const styles = StyleSheet.create({
 	container: {
-    flex: 1,
+		flex: 1,
     margin: 16
+	},
+	image: {
+		// minHeight: 100,
+		// minWidth: 100,
+		// maxHeight: 200,
+		// maxWidth: 200,
+		height: 150,
+		width: 150
 	}
 })
 

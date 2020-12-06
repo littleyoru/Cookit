@@ -28,7 +28,7 @@ class LoginScreen extends Component {
   }
 
   gotToRegister () {
-
+    navigation.navigate('Details');
   }
 
   render() {
@@ -45,6 +45,7 @@ class LoginScreen extends Component {
             placeholder='Password'
             onChangeText={(text) => this.onChangeText('password', text)}
             value={this.state.password}
+            isPass={true}
           />
           <TouchableHighlight style={styles.btn} onPress={this.login}>
             <Text style={styles.btnText}>Sign in</Text>
