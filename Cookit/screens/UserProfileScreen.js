@@ -5,8 +5,10 @@ import CustomTextInput from '../components/CustomTextInput';
 class UserProfileScreen extends Component {
   render () {
     return (
-      <View>
-      </View>
+      <SafeAreaView style={styles.viewContainer}>
+        <View style={styles.container}>
+        </View>
+      </SafeAreaView>
     )
   }
 }

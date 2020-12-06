@@ -15,7 +15,7 @@ class MyFridgeScreen extends Component {
           <Image source={veggie} style={{height: 50, width: 50, margin: 10}} />
           <Image source={meat} style={{height: 50, width: 50, margin: 10}} />
           <Image source={spice} style={{height: 50, width: 50, margin: 10}} />
-      </ScrollView>
+        </ScrollView>
         <Image source={logo} style={{width: 100, height: 100}} />
       </View>
     )

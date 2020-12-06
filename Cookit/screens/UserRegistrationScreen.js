@@ -30,36 +30,38 @@ class UserRegistrationScreen extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.title}>Cookit Registration</Text>
-        <CustomTextInput
-          placeholder='Username'
-          icon='info'
-          onChangeText={(text) => this.onChangeText('username', text)}
-          value={this.state.username}
-        />
-        <CustomTextInput
-            placeholder='Email'
+      <SafeAreaView style={styles.viewContainer}>
+        <View style={styles.container}>
+          <Text style={styles.title}>Cookit Registration</Text>
+          <CustomTextInput
+            placeholder='Username'
             icon='info'
-            onChangeText={(text) => this.onChangeText('email', text)}
-            value={this.state.email}
-        />
-        <CustomTextInput
-          placeholder='Password'
-          icon='info'
-          onChangeText={(text) => this.onChangeText('password', text)}
-          value={this.state.password}
-        />
-        <CustomTextInput
-            placeholder='Repeat password'
+            onChangeText={(text) => this.onChangeText('username', text)}
+            value={this.state.username}
+          />
+          <CustomTextInput
+              placeholder='Email'
+              icon='info'
+              onChangeText={(text) => this.onChangeText('email', text)}
+              value={this.state.email}
+          />
+          <CustomTextInput
+            placeholder='Password'
             icon='info'
-            onChangeText={(text) => this.onChangeText('repeatPassword', text)}
-            value={this.state.repeatPassword}
-        />
-        <TouchableHighlight style={styles.btn} onPress={this.createUser}>
-          <Text style={styles.btnText}>Create user</Text>
-        </TouchableHighlight>
-      </View>
+            onChangeText={(text) => this.onChangeText('password', text)}
+            value={this.state.password}
+          />
+          <CustomTextInput
+              placeholder='Repeat password'
+              icon='info'
+              onChangeText={(text) => this.onChangeText('repeatPassword', text)}
+              value={this.state.repeatPassword}
+          />
+          <TouchableHighlight style={styles.btn} onPress={this.createUser}>
+            <Text style={styles.btnText}>Create user</Text>
+          </TouchableHighlight>
+        </View>
+      </SafeAreaView>
     );
   }
 }

@@ -15,7 +15,7 @@ const OrangeTheme = {
 const Stack = createStackNavigator();
 
 function RootNavigator() {
-  let hasToken = false
+  let hasToken = true
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       {hasToken ? (

@@ -35,7 +35,7 @@ class LoginScreen extends Component {
     return (
       <SafeAreaView style={styles.viewContainer}>
         <View style={styles.container}>
-          <Text style={styles.title}>Please Login to continue</Text>
+          <Text style={styles.label}>Please Login to continue</Text>
           <CustomTextInput
             placeholder='Email'
             onChangeText={(text) => this.onChangeText('email', text)}
@@ -47,12 +47,15 @@ class LoginScreen extends Component {
             value={this.state.password}
           />
           <TouchableHighlight style={styles.btn} onPress={this.login}>
-            <Text style={styles.btnText}>Login</Text>
+            <Text style={styles.btnText}>Sign in</Text>
           </TouchableHighlight>
           <Text>or</Text>
-          <TouchableHighlight style={styles.btn} onPress={this.gotToRegister}>
-            <Text style={styles.btnText}>Register</Text>
+          <TouchableHighlight style={styles.link} onPress={this.gotToRegister}>
+            <Text style={styles.linkText}>Sign up</Text>
           </TouchableHighlight>
+          {/*<TouchableHighlight style={styles.btn} onPress={this.gotToRegister}>
+            <Text style={styles.btnText}>Sign up</Text>
+          </TouchableHighlight>*/}
         </View>
       </SafeAreaView>
     );
@@ -71,13 +74,18 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
     paddingVertical: 24
   },
+  label: {
+    fontSize: 20,
+    alignSelf: 'flex-start',
+    paddingBottom: 24
+  },
   title: {
     fontSize: 20,
-    fontWeight: 'bold',
+    //fontWeight: 'bold',
   },
   btn: {
     backgroundColor: '#FF7F00',
-    width: '70%',
+    width: '60%',
     marginTop: 16,
     marginBottom: 16,
     padding: 16,
@@ -94,6 +102,19 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     textAlign: 'center',
     color: '#FFFFFF'
+  },
+  link: {
+    width: '60%',
+    marginTop: 16,
+    marginBottom: 16,
+    padding: 16,
+    alignSelf: 'center',
+  },
+  linkText: {
+    fontSize: 18,
+    fontWeight: '700',
+    textAlign: 'center',
+    color: '#FF7F00'
   }
 });
 
