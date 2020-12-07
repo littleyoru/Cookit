@@ -37,11 +37,13 @@ class UserProfileScreen extends Component {
             placeholder='Username'
             onChangeText={(text) => this.onChangeText('username', text)}
             value={this.state.username}
+            labelText={'Username'}
           />
           <CustomTextInput
-              placeholder='Email'
-              onChangeText={(text) => this.onChangeText('email', text)}
-              value={this.state.email}
+            placeholder='Email'
+            onChangeText={(text) => this.onChangeText('email', text)}
+            value={this.state.email}
+            labelText={'Email'}
           />
         <TouchableHighlight style={styles.link} onPress={this.gotToRegister}>
           <Text style={styles.linkText}>Change password</Text>
@@ -58,17 +60,15 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
     paddingHorizontal: 24,
-    paddingVertical: 24
+    paddingVertical: 24,
+    justifyContent: 'center'
   },
   title: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: 'bold'
   },
   link: {
-    // width: '60%',
     marginTop: 16,
     marginBottom: 16,
     padding: 16

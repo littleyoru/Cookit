@@ -1,11 +1,12 @@
 import React, { Component, useState } from 'react'
-import { StyleSheet, TextInput, View } from 'react-native'
+import { StyleSheet, TextInput, View, Text } from 'react-native'
 
 const CustomTextInput = (props) => {
   console.log('props ', props)
   const [ hasFocus, onChangeFocus ] = useState(false)
   return (
     <View style={styles.container}>
+      {props.labelText && (<Text style={hasFocus ? styles.focusedLabel : styles.label}>{props.labelText}</Text>)}
       <View style={hasFocus ? [styles.textContainer, styles.focusedTextContainer] : styles.textContainer}>
         <TextInput
           {...props}
@@ -25,10 +26,7 @@ const CustomTextInput = (props) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    //justifyContent: 'space-around'
+    height: 88
   },
   textContainer: {
     flex: 1,
@@ -42,12 +40,18 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF'
   },
   text: {
-    height: 50,
-    padding: 6
+    padding: 6,
+    justifyContent: 'center'
   },
   focusedTextContainer: {
     borderWidth: 1,
     borderColor: '#FF7F00',
+  },
+  label: {
+    color: '#010101'
+  },
+  focusedLabel: {
+    color: '#FF7F00'
   }
 })
 

@@ -2,9 +2,8 @@ import React, { Component } from 'react'
 import { StyleSheet, View, Image, FlatList } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import RecipeViewScreen from './RecipeViewScreen'
-
 import RecipeThumb from '../components/RecipeThumb'
+import prawn from '../assets/mockdata/Prawn-and-green-mango-salad.jpg'
 import caprese from '../assets/mockdata/Caprese_steak.jpg'
 import cheese from '../assets/mockdata/Cheesesteak_stuffed_peppers.jpg'
 import pancakes from '../assets/mockdata/Cornbread_pancakes.jpg'
@@ -33,23 +32,25 @@ class RecipeListScreen extends Component {
         { id: '6', name: 'Lamb ragu', pic: ragu },
         { id: '7', name: 'Summer melon and ham salad', pic: salad },
         { id: '8', name: 'Veggie fried rice with crispy ham', pic: veggie },
-        { id: '9', name: 'Ham and Cheddar Cornbread muffins', pic: muffins }
+        { id: '9', name: 'Ham and Cheddar Cornbread muffins', pic: muffins },
+        { id: '10', name: 'Prawn and green mango salad', pic: prawn }
       ]
     }
 
-    this.goToRecipeView = this.goToRecipeView.bind(this)
+    // this.goToRecipeView = this.goToRecipeView.bind(this)
   }
 
-  goToRecipeView () {
-    this.setState({
-      selectedRecipeId: 0
-    });
-    navigation.navigate('RecipeViewScreen');
-  }
+  // goToRecipeView () {
+  //   this.setState({
+  //     selectedRecipeId: 0
+  //   });
+  //   navigation.navigate('RecipeViewScreen');
+  // }
 
   render() {
+    console.log('props in recipe list ', this.props)
     const renderRecipes = ({ item }) => ( 
-      <RecipeThumb image={item.pic} name={item.name} onPress={() => navigation.navigate('RecipeViewScreen')} /> 
+      <RecipeThumb image={item.pic} name={item.name} onPress={() => this.props.navigation.navigate('RecipeViewScreen', {recipeId: item.id})} /> 
     );
 
     return (

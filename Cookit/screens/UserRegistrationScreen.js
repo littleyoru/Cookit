@@ -68,12 +68,12 @@ class UserRegistrationScreen extends Component {
 const styles = StyleSheet.create({
   viewContainer: {
     flex: 1,
-    justifyContent: 'center'
   },
   container: {
     flex: 1,
-    alignItems: 'center',
     justifyContent: 'center',
+    paddingHorizontal: 24,
+    paddingVertical: 24,
   },
   title: {
     fontSize: 20,

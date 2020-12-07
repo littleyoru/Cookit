@@ -5,8 +5,10 @@ const RecipeThumb = (props) => {
   console.log('props ', props, props.name)
 	return (
 		<TouchableHighlight style={styles.container} onPress={props.onPress}>
-			<Image source={props.image} style={styles.image} />
-			<Text>{props.name}</Text>
+			<View>
+				<Image source={props.image} style={styles.image} />
+				<Text>{props.name}</Text>
+			</View>
 		</TouchableHighlight>
 	)
 }

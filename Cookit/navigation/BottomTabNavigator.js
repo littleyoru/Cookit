@@ -20,35 +20,45 @@ export default function BottomTabNavigator() {
       <BottomTab.Screen
         name='MyFridge'
         component={MyFridgeScreen}
-        options={() => <TabBarIcon name='fridge-outline' iconType='material-community' tintColor='#FF7F00' />}
+        options={{
+          tabBarIcon: () => <TabBarIcon name='fridge-outline' iconType='material-community' tintColor='#FF7F00' />
+        }}
       />
       <BottomTab.Screen
         name='Recipes'
         component={RecipesNavigator}
-        options={() => <TabBarIcon name='menu-book' iconType='material' />}
+        options={{
+          tabBarIcon: () => <TabBarIcon name='menu-book' iconType='material' />
+        }}
       />
       <BottomTab.Screen
         name='AddRecipe'
         component={AddRecipeScreen}
-        options={() => <TabBarIcon name='page-add' iconType='foundation' />}
+        options={{
+          tabBarIcon: () => <TabBarIcon name='page-add' iconType='foundation' />
+        }}
       />
       <BottomTab.Screen
         name='Favs'
         component={RecipesNavigator}
-        options={() => <TabBarIcon name='bookmark' iconType='octicon' />}
+        options={{
+          tabBarIcon: () => <TabBarIcon name='bookmark' iconType='octicon' />
+        }}
       />
       <BottomTab.Screen
         name='Profile'
         component={UserProfileScreen}
-        options={() => <TabBarIcon name='person-outline' iconType='material' />}
+        options={{
+          tabBarIcon: () => <TabBarIcon name='person-outline' iconType='material' />
+        }}
       />
     </BottomTab.Navigator>
   )
 }
 
-function TabBarIcon() {
+function TabBarIcon(props) {
   console.log('icon props ', props)
-  return <Icon name={props.name} type='props.iconType' fill='#FF7F00' color='#FF7F00' style={styles.iconStyle} size={30} />;
+  return <Icon name={props.name} type='props.iconType' style={styles.iconStyle} size={30} />;
 }
 
 const RecipesStack = createStackNavigator();

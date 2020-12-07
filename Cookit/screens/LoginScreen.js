@@ -24,11 +24,11 @@ class LoginScreen extends Component {
   }
 
   login () {
-
+    this.props.navigation.navigate('MyFridgeScreen');
   }
 
   gotToRegister () {
-    navigation.navigate('Details');
+    this.props.navigation.navigate('UserRegistrationScreen');
   }
 
   render() {
@@ -50,13 +50,9 @@ class LoginScreen extends Component {
           <TouchableHighlight style={styles.btn} onPress={this.login}>
             <Text style={styles.btnText}>Sign in</Text>
           </TouchableHighlight>
-          <Text>or</Text>
           <TouchableHighlight style={styles.link} onPress={this.gotToRegister}>
             <Text style={styles.linkText}>Sign up</Text>
           </TouchableHighlight>
-          {/*<TouchableHighlight style={styles.btn} onPress={this.gotToRegister}>
-            <Text style={styles.btnText}>Sign up</Text>
-          </TouchableHighlight>*/}
         </View>
       </SafeAreaView>
     );
@@ -66,11 +62,11 @@ class LoginScreen extends Component {
 const styles = StyleSheet.create({
   viewContainer: {
     flex: 1,
-    justifyContent: 'center'
+    // justifyContent: 'center'
   },
   container: {
-    flex: 0.7,
-    alignItems: 'center',
+    flex: 1,
+    // alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: 24,
     paddingVertical: 24
@@ -81,8 +77,7 @@ const styles = StyleSheet.create({
     paddingBottom: 24
   },
   title: {
-    fontSize: 20,
-    //fontWeight: 'bold',
+    fontSize: 20
   },
   btn: {
     backgroundColor: '#FF7F00',
