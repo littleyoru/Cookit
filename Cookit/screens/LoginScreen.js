@@ -74,7 +74,9 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 20,
     alignSelf: 'flex-start',
-    paddingBottom: 24
+    paddingBottom: 24,
+    marginLeft: 8,
+    marginBottom: 16
   },
   title: {
     fontSize: 20

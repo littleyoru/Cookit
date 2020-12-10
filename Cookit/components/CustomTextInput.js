@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   },
   textContainer: {
     flex: 1,
-    borderRadius: 5,
+    borderRadius: 20,
     shadowOffset: { width: 5, height: 10, },
     shadowColor: '#000000',
     shadowOpacity: 0.8,
@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
   },
   text: {
     padding: 6,
+    marginLeft: 8,
     justifyContent: 'center'
   },
   focusedTextContainer: {
@@ -48,10 +49,12 @@ const styles = StyleSheet.create({
     borderColor: '#FF7F00',
   },
   label: {
-    color: '#010101'
+    color: '#010101',
+    marginLeft: 8,
   },
   focusedLabel: {
-    color: '#FF7F00'
+    color: '#FF7F00',
+    marginLeft: 8
   }
 })
 

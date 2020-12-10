@@ -78,6 +78,8 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: 'bold',
+    marginLeft: 8,
+    marginBottom: 16
   },
   btn: {
     backgroundColor: '#FF7F00',

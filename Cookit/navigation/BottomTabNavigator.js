@@ -21,35 +21,35 @@ export default function BottomTabNavigator() {
         name='MyFridge'
         component={MyFridgeScreen}
         options={{
-          tabBarIcon: () => <TabBarIcon name='fridge-outline' iconType='material-community' tintColor='#FF7F00' />
+          tabBarIcon: ({ color }) => <TabBarIcon name='fridge-outline' color={color} iconType='material-community' />
         }}
       />
       <BottomTab.Screen
         name='Recipes'
         component={RecipesNavigator}
         options={{
-          tabBarIcon: () => <TabBarIcon name='menu-book' iconType='material' />
+          tabBarIcon: ({ color }) => <TabBarIcon name='book-open' color={color} iconType='font-awesome-5' />
         }}
       />
       <BottomTab.Screen
         name='AddRecipe'
         component={AddRecipeScreen}
         options={{
-          tabBarIcon: () => <TabBarIcon name='page-add' iconType='foundation' />
+          tabBarIcon: ({ color }) => <TabBarIcon name='addfile' color={color} iconType='antdesign' />
         }}
       />
       <BottomTab.Screen
         name='Favs'
         component={RecipesNavigator}
         options={{
-          tabBarIcon: () => <TabBarIcon name='bookmark' iconType='octicon' />
+          tabBarIcon: ({ color }) => <TabBarIcon name='bookmark' color={color} iconType='octicon' />
         }}
       />
       <BottomTab.Screen
         name='Profile'
         component={UserProfileScreen}
         options={{
-          tabBarIcon: () => <TabBarIcon name='person-outline' iconType='material' />
+          tabBarIcon: ({ color }) => <TabBarIcon name='person-outline' color={color} iconType='material' />
         }}
       />
     </BottomTab.Navigator>
@@ -58,7 +58,7 @@ export default function BottomTabNavigator() {
 
 function TabBarIcon(props) {
   console.log('icon props ', props)
-  return <Icon name={props.name} type='props.iconType' style={styles.iconStyle} size={30} />;
+  return <Icon name={props.name} type='props.iconType' color={props.color} style={styles.iconStyle} size={30} />;
 }
 
 const RecipesStack = createStackNavigator();

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Image, StyleSheet, ScrollView, FlatList } from 'react-native';
+import { View, Image, StyleSheet, ScrollView, FlatList, Text } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import logo from '../assets/images/cauldron6.png'
@@ -25,7 +25,10 @@ class MyFridgeScreen extends Component {
   render() {
     // onPress={() => this.props.navigation.navigate('RecipeViewScreen', {recipeId: item.id})}
     const renderCategories = ({ item }) => (
-      <Image source={item.pic} style={{height: 50, width: 50, margin: 10}} /> 
+      <View style={styles.item}>
+        <Image source={item.pic} style={{height: 50, width: 50, margin: 10}} />
+        <Text style={styles.itemText}>{item.name}</Text>
+      </View>
     );
 
     return (
@@ -69,8 +72,14 @@ const styles = StyleSheet.create({
   },
   list: {
     justifyContent: 'center',
-    marginTop: 10,
-    marginBottom: 10
+    marginVertical: 10
+  },
+  item: {
+    flex: 1,
+    alignItems: 'center'
+  },
+  itemText: {
+    fontWeight: '700'
   }
 })
 
