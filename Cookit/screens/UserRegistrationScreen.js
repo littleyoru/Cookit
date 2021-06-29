@@ -38,22 +38,26 @@ class UserRegistrationScreen extends Component {
             placeholder='Username'
             onChangeText={(text) => this.onChangeText('username', text)}
             value={this.state.username}
+            labelText={'Username'}
           />
           <CustomTextInput
               placeholder='Email'
               onChangeText={(text) => this.onChangeText('email', text)}
               value={this.state.email}
+              labelText={'Email'}
           />
           <CustomTextInput
             placeholder='Password'
             onChangeText={(text) => this.onChangeText('password', text)}
             value={this.state.password}
+            labelText={'Password'}
             isPass={true}
           />
           <CustomTextInput
               placeholder='Repeat password'
               onChangeText={(text) => this.onChangeText('repeatPassword', text)}
               value={this.state.repeatPassword}
+              labelText={'Repeat password'}
               isPass={true}
           />
           <TouchableHighlight style={styles.btn} onPress={this.createUser}>

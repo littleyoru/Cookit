@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Image, StyleSheet, ScrollView, FlatList, Text } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import logo from '../assets/images/cauldron6.png'
+import logo from '../assets/images/cauldron.png'
 import fruit from '../assets/images/fruit.png'
 import veggie from '../assets/images/veggies2.png'
 import meat from '../assets/images/meat3.png'
@@ -22,7 +22,24 @@ class MyFridgeScreen extends Component {
     }
   }
 
+  componentDidMount() {
+    fetch('http://127.0.0.1:3000/fridge/categories/', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: {}
+    })
+    .then(res => res.json())
+    .then(json => {
+      this.setState({ categoriesFromServer: json });
+    })
+    .catch(error => console.log('error ', error));
+  }
+
   render() {
+    console.log('state')
     // onPress={() => this.props.navigation.navigate('RecipeViewScreen', {recipeId: item.id})}
     const renderCategories = ({ item }) => (
       <View style={styles.item}>
@@ -43,7 +60,7 @@ class MyFridgeScreen extends Component {
               keyExtractor={item => item.id} />
           </View>
           <View style={styles.bottomSection}>
-            <Image source={logo} style={{width: 100, height: 100}} />
+            <Image source={logo} style={{width: 150, height: 150}} />
           </View>
         </View>
       </SafeAreaView>

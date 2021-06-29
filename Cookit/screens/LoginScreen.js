@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import CustomTextInput from '../components/CustomTextInput';
+import { login } from '../actions/authentication';
 
 class LoginScreen extends Component {
   constructor (props) {
@@ -24,6 +25,11 @@ class LoginScreen extends Component {
   }
 
   login () {
+    // let data = {
+    //   "Email": "elena@mail.com",
+    //   "Password": "password1"
+    // }
+    // this.props.login(data).then(() => this.props.navigation.navigate('MyFridgeScreen'))
     this.props.navigation.navigate('MyFridgeScreen');
   }
 
